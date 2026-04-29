@@ -89,25 +89,8 @@ input[type="text"] {
       outline: none;
 }
 
-input[type="email"] {
-      width: 300px;
-      padding: 10px;
-      margin-top: 10px;
-      font-family: Arial;
-      font-size: 14px;
-      border: 2px solid #15E6CD;
-      background-color: black;
-      color: #15E6CD;
-      outline: none;
-}
 
-.email-label {
-      color: #15E6CD;
-      font-family: Arial;
-      font-weight: bold;
-      margin-top: 20px;
-      display: block;
-}
+
 
 .star {
       font-size: 30px;
@@ -134,18 +117,18 @@ button {
 </head>
 <body>
 
-<form action="https://formsubmit.co/vivaan.shetty@oberoi-is.net" method="POST">
+<form action="https://formsubmit.co/7fd8802902fee1b14048b0743ef1c07b" method="POST">
 <table>
     <tr>
 
       <td rowspan="2">
         <p style="margin-top: 50px;">In a brief summary what did you learn from the website?</p>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
+        <input type="text" name="learn1"><br>
+        <input type="text" name="learn2"><br>
+        <input type="text" name="learn3"><br>
+        <input type="text" name="learn4"><br>
+        <input type="text" name="learn5"><br>
+        <input type="text" name="learn6"><br>
       </td>
 
       <td>
@@ -155,15 +138,16 @@ button {
         <span class="star" onclick="rate(3)">★</span>
         <span class="star" onclick="rate(4)">★</span>
         <span class="star" onclick="rate(5)">★</span>
+        <input type="hidden" name="star_rating" id="star_rating" value="0">
       </td>
 
       <td rowspan="2">
         <p style="margin-top: 50px;">What was the best part of my website?</p>
-        <input type="radio" name="page"> Homepage<br><br>
-        <input type="radio" name="page"> Evolution<br><br>
-        <input type="radio" name="page"> Communities<br><br>
-        <input type="radio" name="page"> Form<br><br>
-        <input type="radio" name="page"> Ad display<br>
+        <input type="radio" name="best_part" value="Homepage"> Homepage<br><br>
+        <input type="radio" name="best_part" value="Evolution"> Evolution<br><br>
+        <input type="radio" name="best_part" value="Communities"> Communities<br><br>
+        <input type="radio" name="best_part" value="Form"> Form<br><br>
+        <input type="radio" name="best_part" value="Ad display"> Ad display<br>
       </td>
 
     </tr>
@@ -171,19 +155,17 @@ button {
 
       <td>
         <p>Any Feedback:</p>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
-        <input type="text"><br>
+        <input type="text" name="feedback1"><br>
+        <input type="text" name="feedback2"><br>
+        <input type="text" name="feedback3"><br>
+        <input type="text" name="feedback4"><br>
+        <input type="text" name="feedback5"><br>
       </td>
 
     </tr>
 </table>
 
-  <label class="email-label">Enter your email:</label>
-  <input type="email" placeholder="example@email.com">
-  <br>
+  
 
   <button type="submit">Submit Feedback</button>
 </form>
@@ -198,6 +180,7 @@ button {
           stars[i].classList.remove('filled');
         }
       }
+      document.getElementById('star_rating').value = num;
     }
   </script>
 
